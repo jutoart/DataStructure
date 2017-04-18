@@ -45,15 +45,24 @@ class LinkedList<T>
             return false
         }
         else {
-            var index = head
-            
-            for _ in 0..<pos {
-                index = index?.next
+            if pos == 0 {
+                let newNode = LinkedListNode<T>(data)
+                newNode.next = head
+                head = newNode
+                
+            }
+            else {
+                var index = head
+                
+                for _ in 0..<pos-1 {
+                    index = index?.next
+                }
+                
+                let newNode = LinkedListNode<T>(data)
+                newNode.next = index!.next
+                index!.next = newNode
             }
             
-            let newNode = LinkedListNode<T>(data)
-            newNode.next = index!.next
-            index!.next = newNode
             count += 1
             return true
         }
@@ -105,7 +114,7 @@ class LinkedList<T>
             else {
                 var index = head
                 
-                for _ in 0..<pos {
+                for _ in 0..<pos-1 {
                     index = index!.next
                 }
                 
