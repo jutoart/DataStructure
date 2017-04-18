@@ -6,7 +6,7 @@
 //  Copyright © 2017 Art Huang. All rights reserved.
 //
 
-class LinkedListNode<T>
+class LinkedListNode<T: Equatable>
 {
     var data: T?
     var next: LinkedListNode?
@@ -17,7 +17,7 @@ class LinkedListNode<T>
     }
 }
 
-class LinkedList<T>
+class LinkedList<T: Equatable>
 {
     private var _head: LinkedListNode<T>?
     private var _count = 0
@@ -126,6 +126,40 @@ class LinkedList<T>
                 _count -= 1
                 return nodeToRemove!.data
             }
+        }
+    }
+    
+    func removeNode(with data: T) -> Bool {
+        if _head != nil {
+            if let headData = _head!.data, headData == data {
+                _head = _head!.next
+                _count -= 1
+                return true
+            }
+            else {
+                var index = _head
+                
+                while index!.next != nil {
+                    if let nextData = index!.next!.data, nextData == data {
+                        break
+                    }
+                    else {
+                        index = index!.next
+                    }
+                }
+                
+                if let nextNode = index!.next {
+                    index!.next = nextNode.next
+                    _count -= 1
+                    return true
+                }
+                else {
+                    return false
+                }
+            }
+        }
+        else {
+            return false
         }
     }
     
