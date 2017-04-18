@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DF447CBE1EA5C80A009695CF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF447CBD1EA5C80A009695CF /* main.swift */; };
 		DF447CC51EA5C876009695CF /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF447CC41EA5C876009695CF /* LinkedList.swift */; };
+		DF447CDE1EA5DB04009695CF /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF447CDD1EA5DB04009695CF /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		DF447CBA1EA5C80A009695CF /* DataStructure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStructure; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF447CBD1EA5C80A009695CF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DF447CC41EA5C876009695CF /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		DF447CDD1EA5DB04009695CF /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				DF447CBD1EA5C80A009695CF /* main.swift */,
 				DF447CC41EA5C876009695CF /* LinkedList.swift */,
+				DF447CDD1EA5DB04009695CF /* Stack.swift */,
 			);
 			path = DataStructure;
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF447CC51EA5C876009695CF /* LinkedList.swift in Sources */,
+				DF447CDE1EA5DB04009695CF /* Stack.swift in Sources */,
 				DF447CBE1EA5C80A009695CF /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +263,7 @@
 				DF447CC31EA5C80A009695CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
