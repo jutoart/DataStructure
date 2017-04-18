@@ -14,14 +14,14 @@ class Stack<T: Equatable>
     var isEmpty: Bool { return _elements.count == 0 }
     
     func push(data: T) {
-        
+        _elements.append(data)
     }
     
     func pop() -> T? {
-        return nil
+        return _elements.count > 0 ? _elements.removeLast() : nil
     }
     
     func peek() -> T? {
-        return nil
+        return _elements.last
     }
 }
