@@ -6,11 +6,12 @@
 //  Copyright © 2017 Art Huang. All rights reserved.
 //
 
-class Stack<T: Equatable>
+class Stack<T>
 {
     private var _elements = [T]()
     
     var elements: [T] { return _elements }
+    var count: Int { return _elements.count }
     var isEmpty: Bool { return _elements.count == 0 }
     
     func push(data: T) {
