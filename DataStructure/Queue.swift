@@ -15,14 +15,14 @@ class Queue<T>
     var isEmpty: Bool { return _elements.count == 0 }
     
     func add(data: T) {
-        
+        _elements.insert(data, at: 0)
     }
     
     func remove() -> T? {
-        return nil
+        return _elements.count > 0 ? _elements.removeLast() : nil
     }
     
     func peek() -> T? {
-        return nil
+        return _elements.last
     }
 }
