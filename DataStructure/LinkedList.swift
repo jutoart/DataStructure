@@ -19,15 +19,18 @@ class LinkedListNode<T>
 
 class LinkedList<T>
 {
-    var head: LinkedListNode<T>?
-    var count = 0
+    private var _head: LinkedListNode<T>?
+    private var _count = 0
+    
+    var head: LinkedListNode<T>? { return _head }
+    var count: Int { return _count }
     
     func appendNode(for data: T) {
-        if head == nil {
-            head = LinkedListNode<T>(data)
+        if _head == nil {
+            _head = LinkedListNode<T>(data)
         }
         else {
-            var index = head
+            var index = _head
             
             while index!.next != nil {
                 index = index!.next
@@ -37,22 +40,22 @@ class LinkedList<T>
             index!.next = newNode
         }
         
-        count += 1
+        _count += 1
     }
     
     func insertNode(for data: T, at pos: Int) -> Bool {
-        if pos > count {
+        if pos > _count {
             return false
         }
         else {
             if pos == 0 {
                 let newNode = LinkedListNode<T>(data)
-                newNode.next = head
-                head = newNode
+                newNode.next = _head
+                _head = newNode
                 
             }
             else {
-                var index = head
+                var index = _head
                 
                 for _ in 0..<pos-1 {
                     index = index?.next
@@ -63,15 +66,15 @@ class LinkedList<T>
                 index!.next = newNode
             }
             
-            count += 1
+            _count += 1
             return true
         }
     }
     
     func removeFirst() -> T? {
-        if let headNode = head {
-            head = headNode.next
-            count -= 1
+        if let headNode = _head {
+            _head = headNode.next
+            _count -= 1
             return headNode.data
         }
         
@@ -79,10 +82,10 @@ class LinkedList<T>
     }
     
     func removeLast() -> T? {
-        if var indexNode = head {
+        if var indexNode = _head {
             if indexNode.next == nil {
-                head = nil
-                count -= 1
+                _head = nil
+                _count -= 1
                 return indexNode.data
             }
             else {
@@ -92,7 +95,7 @@ class LinkedList<T>
                 
                 let lastNode = indexNode.next!
                 indexNode.next = lastNode.next
-                count -= 1
+                _count -= 1
                 return lastNode.data
             }
         }
@@ -101,18 +104,18 @@ class LinkedList<T>
     }
     
     func removeNode(at pos: Int) -> T? {
-        if pos >= count {
+        if pos >= _count {
             return nil
         }
         else {
             if pos == 0 {
-                let nodeToRemove = head
-                head = nodeToRemove!.next
-                count -= 1
+                let nodeToRemove = _head
+                _head = nodeToRemove!.next
+                _count -= 1
                 return nodeToRemove!.data
             }
             else {
-                var index = head
+                var index = _head
                 
                 for _ in 0..<pos-1 {
                     index = index!.next
@@ -120,14 +123,14 @@ class LinkedList<T>
                 
                 let nodeToRemove = index!.next
                 index!.next = nodeToRemove!.next
-                count -= 1
+                _count -= 1
                 return nodeToRemove!.data
             }
         }
     }
     
     func printNodes() {
-        var index = head
+        var index = _head
         
         while index != nil {
             if let data = index!.data {
