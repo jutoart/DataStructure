@@ -11,6 +11,7 @@
 		DF447CC51EA5C876009695CF /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF447CC41EA5C876009695CF /* LinkedList.swift */; };
 		DF447CDE1EA5DB04009695CF /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF447CDD1EA5DB04009695CF /* Stack.swift */; };
 		DF447CE01EA5E000009695CF /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF447CDF1EA5E000009695CF /* Queue.swift */; };
+		DF447CE21EA7CFDF009695CF /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF447CE11EA7CFDF009695CF /* BinarySearchTree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		DF447CC41EA5C876009695CF /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		DF447CDD1EA5DB04009695CF /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		DF447CDF1EA5E000009695CF /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		DF447CE11EA7CFDF009695CF /* BinarySearchTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				DF447CC41EA5C876009695CF /* LinkedList.swift */,
 				DF447CDD1EA5DB04009695CF /* Stack.swift */,
 				DF447CDF1EA5E000009695CF /* Queue.swift */,
+				DF447CE11EA7CFDF009695CF /* BinarySearchTree.swift */,
 			);
 			path = DataStructure;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 				DF447CDE1EA5DB04009695CF /* Stack.swift in Sources */,
 				DF447CBE1EA5C80A009695CF /* main.swift in Sources */,
 				DF447CE01EA5E000009695CF /* Queue.swift in Sources */,
+				DF447CE21EA7CFDF009695CF /* BinarySearchTree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
