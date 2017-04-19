@@ -24,6 +24,12 @@ class BinarySearchTree<T: Comparable>
     var root: BinarySearchTreeNode<T>?
     var count: Int { return _count }
     
+    enum TraversalType {
+        case inOrder
+        case preOrder
+        case postOrder
+    }
+    
     func add(with data: T) {
         let newTreeNode = BinarySearchTreeNode(data: data)
         
@@ -90,11 +96,17 @@ class BinarySearchTree<T: Comparable>
             case (nil, .some):
                 successor = indexNode.right
             case (.some, .some):
+                var successorParent: BinarySearchTreeNode<T>?
                 successor = indexNode.right
                 
                 while successor!.left != nil {
+                    successorParent = successor
                     successor = successor!.left
                 }
+                
+                successorParent?.left = nil
+                successor!.left = indexNode.left
+                successor!.right = (successor!.data == indexNode.right!.data) ? nil : indexNode.right
             default:
                 break
             }
@@ -134,5 +146,42 @@ class BinarySearchTree<T: Comparable>
         }
         
         return index
+    }
+    
+    func printTree(using traversal: TraversalType) {
+        switch traversal {
+        case .inOrder:
+            print("In order:", terminator: "")
+        case .preOrder:
+            print("Pre order", terminator: "")
+        case .postOrder:
+            print("Post order", terminator: "")
+        }
+        
+        let printBlock: (BinarySearchTreeNode<T>) -> Void = { node in
+            print(" \(node.data)", terminator: "")
+        }
+        
+        treeTraversal(from: root, using: traversal, block: printBlock)
+        print()
+    }
+    
+    private func treeTraversal(from root: BinarySearchTreeNode<T>?, using type: TraversalType, block visit: (BinarySearchTreeNode<T>) -> Void) {
+        if let node = root {
+            switch type {
+            case .inOrder:
+                treeTraversal(from: node.left, using: type, block: visit)
+                visit(node)
+                treeTraversal(from: node.right, using: type, block: visit)
+            case .preOrder:
+                visit(node)
+                treeTraversal(from: node.left, using: type, block: visit)
+                treeTraversal(from: node.right, using: type, block: visit)
+            case .postOrder:
+                treeTraversal(from: node.left, using: type, block: visit)
+                treeTraversal(from: node.right, using: type, block: visit)
+                visit(node)
+            }
+        }
     }
 }
